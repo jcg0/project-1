@@ -1,14 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div>hello</div>
-    <script src="./assets/app.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/css/uikit.min.css" />
+  <title>Recipe Finder</title>
+</head>
+
+<body>
+  <!-- Header and Logo -->
+  <header>
+    <div>
+      <h1 class="uk-heading-line uk-text-center"><span>Recipe Finder</span></h1>
+    </div>
+    <nav>
+      <div class="onlynav">
+        <strong>
+          <a href="#Recipes"> Food or Drinks?</a>
+        </strong>
+      </div>
+    </nav>
+  </header>
+  <!-- image/video/scrollable  -->
+  <section>
+    <div class="main-image-container">
+      <video src="./assets/foodimage.mp4" width="1000" height="500" loop muted playsinline uk-video="autoplay: inview"
+        class="uk-align-center"></video>
+    </div>
+  </section>
+
+
+
+  <!-- cards for Recipes and Cocktails or Drinks  -->
+
+
+
+
+  <section class="recipe-card-container">
+    <div class="uk-child-width-1-2@m" uk-grid>
+      <div>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img src="./assets/placeholder.jpeg" width="1800" height="1200" alt="">
+          </div>
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">Media Top</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img src="./assets/placeholder.jpeg" width="1800" height="1200" alt="">
+          </div>
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">Media Top</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          </div>
+        </div>
+      </div>
+
+
+  </section>
+
+
+
+
+  <!--search input -->
+
+  <!-- dropdown -->
+
+  <!-- find button -->
+
+  <script src="./assets/app.js"></script>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit-icons.min.js"></script>
+</body>
+
 </html>
