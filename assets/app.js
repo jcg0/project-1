@@ -1,7 +1,7 @@
 const appId = "&app_id=287a773f";
 const appKey = "&app_key=080726096a3b8d16c8a969402882bab9";
 
-async function getRecipeApi() {
+const getRecipeApi = async function () {
   try {
     const response = await axios.get(
       `https://api.edamam.com/api/recipes/v2?type=public&q=alfredo${appId}${appKey}`
@@ -10,8 +10,21 @@ async function getRecipeApi() {
   } catch (error) {
     console.log("Error", error);
   }
-}
+};
 
+const getCocktailApi = async function () {
+  try {
+    const response = await axios.get(
+      "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+    );
+    console.log(response.data);
+  } catch (error) {
+    console.log("error", error);
+  }
+};
+
+getCocktailApi();
+getRecipeApi();
 // const options = {
 
 // }
@@ -32,5 +45,3 @@ async function getRecipeApi() {
 //       console.log(data);
 //     });
 //}
-
-getRecipeApi();
