@@ -40,14 +40,14 @@
   <!-- Description on how to use the Application -->
   <section>
     <div class="description-container">
-      <p>Description and Insructions on how to use the Application</p>
+      <p class="description-p">Description and Insructions on how to use the Application</p>
     </div>
   </section>
 
 
   <!-- cards for Recipes and Cocktails or Drinks  -->
 
-  <section class="recipe-card-container" id="Recipes">
+  <section class="recipe-card-container uk-align-center" id="Recipes">
     <div class="uk-child-width-1-2@m" uk-grid>
       <div>
         <div class="uk-card uk-card-default">
@@ -60,7 +60,34 @@
           </div>
         </div>
       </div>
+  </section>
 
+  <section>
+    <!-- search bar -->
+    <div>
+      <div class="uk-margin">
+        <form class="uk-search uk-search-default">
+          <span uk-search-icon></span>
+          <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+
+
+      <!-- drop down -->
+      <div class="uk-inline">
+        <button class="uk-button uk-button-default" type="button">Dropdown</button>
+        <div uk-dropdown="mode: click">
+          <ul class="uk-nav">
+            <li class="uk-active"><a href=""></a></li>
+            <li><a href="">blank</a></li>
+            <li><a href="">blank</a></li>
+          </ul>
+        </div>
+      </div>
+  </section>
+  <!-- card for recipe -->
+  <section class="recipe-card-container uk-align-center" id="Recipes">
+    <div class="uk-child-width-1-2@m" uk-grid>
       <div>
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top">
@@ -72,20 +99,42 @@
           </div>
         </div>
       </div>
-
-
+    </div>
   </section>
 
-  <!--search input -->
+  <section>
+    <!-- search bar -->
+    <div>
+      <div class="uk-margin">
+        <form class="uk-search uk-search-default">
+          <span uk-search-icon></span>
+          <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
 
-  <!-- dropdown -->
 
-  <!-- find button -->
+      <!-- drop down -->
+      <div class="uk-inline">
+        <button class="uk-button uk-button-default" type="button">Dropdown</button>
+        <div uk-dropdown="mode: click">
+          <ul class="uk-nav">
+            <li class="uk-active"><a href=""></a></li>
+            <li><a href="">blank</a></li>
+            <li><a href="">blank</a></li>
+          </ul>
+        </div>
+      </div>
+  </section>
+
+
+
 
   <script src="./assets/app.js"></script>
   <!-- UIkit JS -->
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit-icons.min.js"></script>
+  <script src="uikit/dist/js/uikit-icons.min.js"></script>
+
 </body>
 
 </html>

@@ -1,3 +1,6 @@
+body{
+    background-color: darkgrey;
+}
 .onlynav{
     text-align: center;
 }
@@ -6,13 +9,19 @@ section{
     display:flex;
     justify-content: center;
 }
-.description-container {
+.description-container , .description-p{
     display: flex;
     text-align: center;
     padding:30px;
     justify-content:center;
-    background-color:lightgray;
+    background-color:white;
     width: 945px;
-    margin-top: 25px;
+    margin-top: -6px;
+    margin-bottom:6px;
     opacity: 80%;
 }
+
+.uk-search, span {
+    background-color:white;
+}
+
