@@ -1,14 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div>hello</div>
-    <script src="./assets/app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/css/uikit.min.css" />
+  <title>Recipe Finder</title>
+</head>
+
+<body>
+
+
+  <!-- Header and Logo Small Nav -->
+  <header>
+    <img src="" alt="Place-holder-text">
+    <div>
+      <h1 class="uk-heading-line uk-text-center"><span>Recipe Finder</span></h1>
+    </div>
+    <nav>
+      <div class="onlynav">
+        <strong>
+          <a href="#Recipes"> Food or Drinks?</a>
+        </strong>
+      </div>
+    </nav>
+  </header>
+
+<!-- Parent container with form and image -->
+   <div class="parent"> <!-- this class is just a placeholder for now, can change if need be -->
+      <div>
+        <form action="">
+          <input type="submit">  
+        </form>
+        <img src="" alt="PLACEHOLDER TEXT">
+      </div>
+      <div>
+        <form action="">
+          <input type="submit">
+        </form>
+        <img src="" alt="PLACEHOLDER TEXT">
+      </div>
+      <element onselect="placeholder.js"></element>
+  </div>
+
+  <!-- image/video -->
+  <section>
+    <div class="main-image-container">
+      <video src="./assets/foodimage.mp4" width="1000" height="500" loop muted playsinline uk-video="autoplay: inview"
+        class="uk-align-center"></video>
+    </div>
+  </section>
+
+  <!-- Description on how to use the Application -->
+  <section>
+    <div class="description-container">
+      <p class="description-p">Welcome to the Food and Cocktail recipe finder app! With this you can quickly search 
+        for a recipe based on your choice and a cocktail based on what you would like to drink!</p>
+      <p> You can search based on your hunger preference or choose from one of our drop down menu items which includes quick searches
+        for popular dishes which include, chicken, beef, or vegetarian options! </p>
+    </div>
+  </section>
+
+
+  <!-- cards for Recipes -->
+
+  <section class="recipe-card-container uk-align-center" id="Recipes">
+    <div class="uk-child-width-1-2@m" uk-grid>
+      <div>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img src="./assets/placeholder.jpeg" width="1800" height="1200" alt="">
+          </div>
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">Recipes</h3>
+            <p>Description, Indgredient and Instructions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- search bar -->
+
+    <div class="uk-margin">
+      <form class="uk-search uk-search-default">
+        <a href="" uk-search-icon></a>
+        <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
+      </form>
+    </div>
+
+
+
+    <!-- drop down -->
+    <div class="uk-inline">
+      <button class="uk-button uk-button-default" type="button">Dropdown</button>
+      <div uk-dropdown="mode: click">
+        <ul class="uk-nav">
+          <li class="uk-active"><a href=""></a></li>
+          <li><a href="">blank</a></li>
+          <li><a href="">blank</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+  </section>
+
+
+
+  <!-- Card for Cocktails -->
+  <section class="recipe-card-container uk-align-center" id="Recipes">
+    <div class="uk-child-width-1-2@m" uk-grid>
+      <div>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img src="./assets/placeholder.jpeg" width="1800" height="1200" alt="">
+          </div>
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">Cocktails</h3>
+            <p>Description, Ingredient and Instructions</p>
+          </div>
+        </div>
+
+
+        <!-- search bar -->
+        <div class="uk-margin">
+          <form class="uk-search uk-search-default">
+            <a href="" uk-search-icon></a>
+            <button>Search</button>
+            <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
+          </form>
+        </div>
+
+
+        <!-- drop down -->
+        <div class="uk-inline">
+          <button class="uk-button uk-button-default" type="button">Dropdown</button>
+          <div uk-dropdown="mode: click">
+            <ul class="uk-nav">
+              <li class="uk-active"><a href=""></a></li>
+              <li><a href="">blank</a></li>
+              <li><a href="">blank</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+
+  <!-- JavaScript -->
+  <script src="./assets/app.js"></script>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit-icons.min.js"></script>
+  <script src="uikit/dist/js/uikit-icons.min.js"></script>
+
+</body>
+
 </html>
