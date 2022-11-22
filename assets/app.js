@@ -44,7 +44,7 @@ const getRecipeApi = function () {
 };
 
 
-$('#cocktailSearchForm').on('click', function(event){
+$('#cocktailSearchForm').on('submit', function(event){
   event.preventDefault()
   //getApi(textBox.value)
   //var box = document.getElementById(inputValue).value
