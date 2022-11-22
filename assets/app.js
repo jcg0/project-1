@@ -16,12 +16,18 @@ mealForm.addEventListener("submit", function (event) {
     })
     .then((data) => {
       console.log(data.hits);
-      for (let i = 0; i <= data.hits.length; i++) {
-        const img = document.createElement("img");
-        img.src = data.hits[i].recipe.image;
-        document.body.append(img);
-      }
+      // for (let i = 0; i <= data.hits.length; i++) {
+      const img = document.createElement("img");
+      img.src = data.hits[1].recipe.image;
+      let img_div = document.getElementById("search-img");
+      img_div.append(img);
+
+      event.target.reset();
+      
+      // document.body.append(img);
+      // }
       return;
+
     });
 });
 
