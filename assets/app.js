@@ -23,13 +23,10 @@ mealForm.addEventListener("submit", function (event) {
       const img = document.createElement("img");
       const mealLi = document.createElement("li");
       const mealSrc = data.hits[i].recipe.image;
-      const cover = document.querySelector("#cover")
-      img.setAttribute("uk-cover");
-      cover.append("img");
-      img.src = mealSrc;
-      // mealCrsl.append(mealLi);
-      // mealCrsl.classList.add("uk-cover-continer");
-      // mealLi.append(img)
+      img.setAttribute("src", mealSrc,"uk-cover");
+      mealCrsl.append(mealLi);
+      mealLi.classList.add("uk-cover-continer");
+      mealLi.append(img)
 
       // img_div.append(img);
       }
