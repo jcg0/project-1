@@ -2,7 +2,8 @@ const appId = "&app_id=287a773f";
 const appKey = "&app_key=080726096a3b8d16c8a969402882bab9";
 const mealForm = document.querySelector("#mealSearchForm");
 const mealImg = document.querySelector("#mealImg");
-let img_div = document.getElementById("search-img");
+const mealCrsl = document.querySelector("#mealCrsl");
+// let img_div = document.getElementById("search-img");
 
 mealForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -18,13 +19,20 @@ mealForm.addEventListener("submit", function (event) {
     })
     .then((data) => {
       console.log(data.hits);
-      // for (let i = 0; i <= data.hits.length; i++) {
-      // const img = document.createElement("img");
-      const mealSrc = data.hits[0].recipe.image;
-      mealImg.setAttribute("src", mealSrc);
+      for (let i = 0; i < data.hits.length; i++) {
+      const img = document.createElement("img");
+      const mealLi = document.createElement("li");
+      const mealSrc = data.hits[i].recipe.image;
+      const cover = document.querySelector("#cover")
+      img.setAttribute("uk-cover");
+      cover.append("img");
+      img.src = mealSrc;
+      // mealCrsl.append(mealLi);
+      // mealCrsl.classList.add("uk-cover-continer");
+      // mealLi.append(img)
 
       // img_div.append(img);
-
+      }
       event.target.reset();
 
       // document.body.append(img);
