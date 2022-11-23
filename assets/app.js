@@ -42,13 +42,11 @@ const getRecipeApi = function () {
       console.log("JSON", data);
     });
 };
-
+  
+// cocktail search function.
 
 $('#cocktailSearchForm').on('submit', function(event){
   event.preventDefault()
-  //getApi(textBox.value)
-  //var box = document.getElementById(inputValue).value
-  //console.log(box)
   var cocktailSearch = $("#inputValue").val().trim();
   console.log(cocktailSearch)
 
@@ -61,55 +59,61 @@ const options = {
   };
   
   fetch('https://the-cocktail-db.p.rapidapi.com/search.php?s='+ cocktailSearch, options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+  .then(function (response) {
+    return response.json();
+  })
+  .then (function(data){
+    console.log(data)
+    const drinkList = [data.drinks[0].strDrink, data.drinks[1].strDrink, data.drinks[2].strDrink, data.drinks[3].strDrink, data.drinks[4].strDrink]
+    
+    const drinkImg = [data.drinks[0].strDrinkThumb, data.drinks[1].strDrinkThumb, data.drinks[2].strDrinkThumb, data.drinks[3].strDrinkThumb, data.drinks[4].strDrinkThumb]
 
-})
-  
+    const drinkDirections = [data.drinks[0].strInstructions, data.drinks[1].strInstructions, data.drinks[2].strInstructions, data.drinks[3].strInstructions, data.drinks[4].strInstructions]
 
+    //This loop will run through the ingredients needed for the drink. 
+    for (let i = 1; i < 16; i++) {
+      //console.log(i);
+      ingredient = data.drinks[0][`strIngredient${i}`];
+      console.log(ingredient);
+    };
 
+    for (let i = 1; i < 16; i++) {
+      //console.log(i);
+      ingredient1 = data.drinks[1][`strIngredient${i}`];
+      console.log(ingredient1);
+    };
 
-// const cocktailForm = document.querySelector("#cocktailSearchForm");
+    for (let i = 1; i < 16; i++) {
+      //console.log(i);
+      ingredient2 = data.drinks[2][`strIngredient${i}`];
+      console.log(ingredient2);
+    };
 
-// cocktailForm.addEventListener("submit", function (event) {
-//   event.preventDefault();
-//   // console.dir is a way to see all the properties of a javascript object.
-//   // in this case i use console.dir(form) to find the value for the input
-//  // console.dir(cocktailForm.elements.query.value);
-//   const cocktailSearchTerm = cocktailForm.elements.query.value;
-//   console.log(cocktailSearchTerm)
-//   fetch(
-//     `https://api.edamam.com/api/recipes/v2?type=public&q=${cocktailSearchTerm}${appId}${appKey}`
-//   )
-//     .then((res) => {
-//       return res.json();
-//     })
-//     .then((data) => {
-//       console.log(data.hits);
-//       // for (let i = 0; i <= data.hits.length; i++) {
-     
+    for (let i = 1; i < 16; i++) {
+      //console.log(i);
+      ingredient3 = data.drinks[3][`strIngredient${i}`];
+      console.log(ingredient3);
+    };
 
-//       event.target.reset();
-      
-//       // document.body.append(img);
-//       // }
-//       return;
+    for (let i = 1; i < 16; i++) {
+      //console.log(i);
+      ingredient4 = data.drinks[4][`strIngredient${i}`];
+      console.log(ingredient4);
+    };
 
-//     });
-// });
+    // this loop is only bring back null, not sure why yet. 
+    // for (let i = 1; i < 16; i++) {
+    //   //console.log(i);
+    //   measure = data.drinks[0][`strMeasure${i}`];
+    //   console.log(measure);
+    // };
 
-// const getCocktailApi = function () {
-//   const apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list";
-//   fetch(apiUrl)
-//     .then((res) => {
-//       return res.json();
-//     })
-//     .then((data) => {
-//       console.log(data);
-//     });
-// };
+      // const imgDrink = document.createElement("img");
+      // imgDrink.src = data.drinks[1].strDrinkThumb;
+      // let img_Drink = document.getElementById("cocktailImg");
+      // img_Drink.append(imgDrink);
 
-// uncomment to see api calls in the console
-// getCocktailApi();
-// getRecipeApi();
+      // cocktailSearchForm.append(element)
+  })
+}) 
+
