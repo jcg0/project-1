@@ -59,16 +59,11 @@
     <!-- cards for Recipes -->
 
     <section class="recipe-card-container uk-align-center" id="Recipes">
-      <div class="uk-child-width-1-2@m" uk-grid>
+      <div class="uk-child-width-1-2@m uk-flex-center" uk-grid>
         <div>
           <div class="uk-card uk-card-default">
             <div class="uk-card-media-top" id="search-img">
-              <!-- <img
-                src="./assets/placeholder.jpeg"
-                width="1800"
-                height="1200"
-                alt=""
-              /> -->
+              <img id="mealImg" src="" alt="" />
             </div>
             <div class="uk-card-body">
               <h3 class="uk-card-title">Recipes</h3>
@@ -79,8 +74,7 @@
       </div>
 
       <!-- search bar -->
-
-      <div class="uk-margin">
+      <div class="uk-flex-center" uk-grid>
         <form class="uk-search uk-search-default" id="mealSearchForm">
           <!-- <a href="" uk-search-icon></a> -->
           <input
@@ -92,10 +86,7 @@
           />
           <button>Search</button>
         </form>
-      </div>
-
-      <!-- drop down -->
-      <div class="uk-inline">
+        <!-- drop down -->
         <button class="uk-button uk-button-default" type="button">
           Dropdown
         </button>
@@ -105,13 +96,12 @@
             <li><a href="">blank</a></li>
             <li><a href="">blank</a></li>
           </ul>
-        </div>
       </div>
-    </section>
+    </section> 
 
     <!-- Card for Cocktails -->
     <section class="recipe-card-container uk-align-center" id="Recipes">
-      <div class="uk-child-width-1-2@m" uk-grid>
+      <div class="uk-child-width-1-2@m uk-flex-center" uk-grid>
         <div>
           <div class="uk-card uk-card-default">
             <div class="uk-card-media-top" id="search-img">
@@ -129,7 +119,9 @@
           </div>
 
           <!-- search bar -->
-          <div class="uk-margin">
+
+          <div class="uk-flex-center" uk-grid>
+
             <form class="uk-search uk-search-default" id="cocktailSearchForm">
               <a href="" uk-search-icon></a>
               <input
@@ -138,13 +130,11 @@
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                name="query"
               />
               <button>Search</button>
             </form>
-          </div>
-
-          <!-- drop down -->
-          <div class="uk-inline">
+            <!-- drop down -->
             <button class="uk-button uk-button-default" type="button">
               Dropdown
             </button>
@@ -155,7 +145,6 @@
                 <li><a href="">blank</a></li>
               </ul>
             </div>
-          </div>
         </div>
       </div>
     </section>
