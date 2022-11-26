@@ -35,7 +35,8 @@ const showMealRecipe = function (data) {
   console.log(data.hits);
   for (let i = 0; i < data.hits.length; i++) {
     const mealDataUl = document.querySelector("#mealData");
-    const li = document.createElement("li");
+    // const li = document.createElement("li");
+    const div = document.createElement("div");
     const img = document.createElement("img");
     const aTag = document.createElement("a");
     const recipeUrl = data.hits[i].recipe.url;
@@ -46,15 +47,21 @@ const showMealRecipe = function (data) {
     console.log(recipeUrl);
     aTag.textContent = recipeLabel;
     aTag.classList.add("uk-align-center", "meal-anchor", "meal-anchor:hover");
+    aTag.setAttribute("target", "_blank");
 
-    li.textContent = "Recipe Link:";
+    div.textContent = "Recipe Link:";
 
-    li.classList.add("meal-list");
+    div.classList.add(
+      "meal-list",
+      "uk-card",
+      "uk-card-default",
+      "uk-card-body"
+    );
 
     img.src = thumbImg;
-    li.append(aTag);
-    li.append(img);
-    mealDataUl.append(li);
+    div.append(aTag);
+    div.append(img);
+    mealDataUl.append(div);
   }
 };
 
