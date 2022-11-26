@@ -35,22 +35,27 @@ const showMealRecipe = function (data) {
   console.log(data.hits);
   for (let i = 0; i < data.hits.length; i++) {
     const mealDataUl = document.querySelector("#mealData");
-    // const li = document.createElement("li");
     const div = document.createElement("div");
     const img = document.createElement("img");
     const aTag = document.createElement("a");
+    const ul = document.createElement("ul");
+    const li1 = document.createElement("li");
+    const li2 = document.createElement("li");
+    const li3 = document.createElement("li");
+    const labelP = document.createElement("p");
     const recipeUrl = data.hits[i].recipe.url;
     const recipeLabel = data.hits[i].recipe.label;
     const thumbImg = data.hits[i].recipe.images.THUMBNAIL.url;
 
-    aTag.href = recipeUrl;
-    console.log(recipeUrl);
-    aTag.textContent = recipeLabel;
+    const calories = Math.round(data.hits[i].recipe.calories);
+    const cautions = data.hits[i].recipe.cautions;
+    const recipeWarning = "This recipe contains" + " " + cautions;
+
+    ul.classList.add("new-ul");
+    li2.classList.add("new-li");
+    img.classList.add("img");
     aTag.classList.add("uk-align-center", "meal-anchor", "meal-anchor:hover");
-    aTag.setAttribute("target", "_blank");
-
-    div.textContent = "Recipe Link:";
-
+    labelP.classList.add("label-p");
     div.classList.add(
       "meal-list",
       "uk-card",
@@ -58,9 +63,29 @@ const showMealRecipe = function (data) {
       "uk-card-body"
     );
 
+    aTag.href = recipeUrl;
     img.src = thumbImg;
-    div.append(aTag);
+    aTag.textContent = "Get Recipe!";
+    li1.textContent = "Calories:" + " " + calories;
+    li2.textContent = recipeWarning;
+    labelP.textContent = recipeLabel;
+
+    aTag.setAttribute("target", "_blank");
+
+    // ul.append(li1);
+    // ul.append(li2);
+    // if (li2.textContent === cautions) {
+    //   li2.textContent = recipeWarning;
+    //   ul.append(li2);
+    // } else {
+    //   li2.textContent = "";
+    // }
+
+    div.append(labelP);
     div.append(img);
+    div.append(aTag);
+    div.append(ul);
+
     mealDataUl.append(div);
   }
 };
