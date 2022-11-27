@@ -169,6 +169,17 @@ $("#cocktailSearchForm").on("submit", function (event) {
         console.log(ingredient4);
       }
 
+
+    // console.log(ingredient);
+    // cocktailDirections.append(drinkDirections[0]);
+    $('#cocktailImage').attr('src', drinkImg[0]);
+    $('#cocktailImage2').attr('src', drinkImg[1]);
+    $('#cocktailImage3').attr('src', drinkImg[2]);
+    $('#cocktailImage4').attr('src', drinkImg[3]);
+    $('#cocktailImage5').attr('src', drinkImg[4]);
+    
+    // cocktailList2.append(drinkList[1]);
+
       // this loop is only bring back null, not sure why yet.
       // for (let i = 1; i < 16; i++) {
       //   //console.log(i);
