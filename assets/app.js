@@ -2,7 +2,8 @@ const appId = "&app_id=287a773f";
 const appKey = "&app_key=080726096a3b8d16c8a969402882bab9";
 const mealForm = document.querySelector("#mealSearchForm");
 const mealImg = document.querySelector("#mealImg");
-let img_div = document.getElementById("search-img");
+const mealCrsl = document.querySelector("#mealCrsl");
+// let img_div = document.getElementById("search-img");
 
 mealForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -18,6 +19,7 @@ mealForm.addEventListener("submit", function (event) {
     })
     .then((data) => {
       console.log(data.hits);
+
       const mealSrc = data.hits[0].recipe.image;
       mealImg.setAttribute("src", mealSrc);
       event.target.reset();
