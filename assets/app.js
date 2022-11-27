@@ -1,8 +1,12 @@
 const appId = "&app_id=287a773f";
 const appKey = "&app_key=080726096a3b8d16c8a969402882bab9";
 const mealForm = document.querySelector("#mealSearchForm");
-const mealImg = document.querySelector("#mealImg");
-let img_div = document.getElementById("search-img");
+// const mealImg = carouselLi.querySelectorAll("#mealImg");
+const mealImg1 = document.querySelector("#mealImg1");
+const mealImg2 = document.querySelector("#mealImg2");
+const mealImg3 = document.querySelector("#mealImg3");
+const mealImg4 = document.querySelector("#mealImg4");
+const mealImg5 = document.querySelector("#mealImg5");
 
 mealForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -18,9 +22,10 @@ mealForm.addEventListener("submit", function (event) {
     })
     .then((data) => {
       console.log(data.hits);
-      const mealSrc = data.hits[0].recipe.image;
-      mealImg.setAttribute("src", mealSrc);
+      // const mealSrc = data.hits[0].recipe.image;
+      // mealImg.setAttribute("src", mealSrc);
       event.target.reset();
+      showRecipeCarousel(data);
       showMealRecipe(data);
       return;
       // for (let i = 0; i <= data.hits.length; i++) {
@@ -31,18 +36,38 @@ mealForm.addEventListener("submit", function (event) {
     });
 });
 
+const showRecipeCarousel = function (data) {
+  const largeImg1 = data.hits[0].recipe.image;
+  const largeImg2 = data.hits[1].recipe.image;
+  const largeImg3 = data.hits[2].recipe.image;
+  const largeImg4 = data.hits[3].recipe.image;
+  const largeImg5 = data.hits[4].recipe.image;
+  mealImg1.setAttribute("src", largeImg1);
+  mealImg2.setAttribute("src", largeImg2);
+  mealImg3.setAttribute("src", largeImg3);
+  mealImg4.setAttribute("src", largeImg4);
+  mealImg5.setAttribute("src", largeImg5);
+};
+
 const showMealRecipe = function (data) {
   console.log(data.hits);
   for (let i = 0; i < data.hits.length; i++) {
     const mealDataUl = document.querySelector("#mealData");
     const div = document.createElement("div");
+    const labelP = document.createElement("p");
     const img = document.createElement("img");
     const aTag = document.createElement("a");
-    const ul = document.createElement("ul");
-    const li1 = document.createElement("li");
-    const li2 = document.createElement("li");
-    const li3 = document.createElement("li");
-    const labelP = document.createElement("p");
+
+    const drpdwnDivParent = document.createElement("div");
+    const drpdwnDivChild = document.createElement("div");
+    const drpdwnUl = document.createElement("ul");
+    const drpdwnLi = document.createElement("li");
+    const drpdwnBtn = document.createElement("button");
+
+    // const li1 = document.createElement("li");
+    // const li2 = document.createElement("li");
+    // const li3 = document.createElement("li");
+
     const recipeUrl = data.hits[i].recipe.url;
     const recipeLabel = data.hits[i].recipe.label;
     const thumbImg = data.hits[i].recipe.images.THUMBNAIL.url;
@@ -51,8 +76,12 @@ const showMealRecipe = function (data) {
     const cautions = data.hits[i].recipe.cautions;
     const recipeWarning = "This recipe contains" + " " + cautions;
 
-    ul.classList.add("new-ul");
-    li2.classList.add("new-li");
+    // ul.classList.add("new-ul");
+    drpdwnDivParent.classList.add("uk-inline");
+    drpdwnBtn.classList.add("uk-button", "uk-button-default");
+    drpdwnBtn.setAttribute("type", "button");
+    drpdwnDivChild.setAttribute("uk-dropdown", "mode: hover");
+    // li2.classList.add("new-li");
     img.classList.add("img");
     aTag.classList.add("uk-align-center", "meal-anchor", "meal-anchor:hover");
     labelP.classList.add("label-p");
@@ -65,9 +94,10 @@ const showMealRecipe = function (data) {
 
     aTag.href = recipeUrl;
     img.src = thumbImg;
+
     aTag.textContent = "Get Recipe!";
-    li1.textContent = "Calories:" + " " + calories;
-    li2.textContent = recipeWarning;
+    // li1.textContent = "Calories:" + " " + calories;
+    // li2.textContent = recipeWarning;
     labelP.textContent = recipeLabel;
 
     aTag.setAttribute("target", "_blank");
@@ -84,7 +114,7 @@ const showMealRecipe = function (data) {
     div.append(labelP);
     div.append(img);
     div.append(aTag);
-    div.append(ul);
+    // div.append(ul);
 
     mealDataUl.append(div);
   }
@@ -170,6 +200,7 @@ $("#cocktailSearchForm").on("submit", function (event) {
       //This loop will run through the ingredients needed for the drink.
       for (let i = 1; i < drinkList.length; i++) {
         // console.log(i);
+
         ingredient = data.drinks[0][`strIngredient${i}`];
 
         console.log(ingredient);
@@ -232,6 +263,7 @@ $("#cocktailSearchForm").on("submit", function (event) {
     
  
     // cocktailList2.append(drinkList[1]);
+
 
       // this loop is only bring back null, not sure why yet.
       // for (let i = 1; i < 16; i++) {
