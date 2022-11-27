@@ -19,63 +19,73 @@ mealForm.addEventListener("submit", function (event) {
     })
     .then((data) => {
       console.log(data.hits);
-      for (let i = 0; i < data.hits.length; i++) {
-      const img = document.createElement("img");
-      const mealLi = document.createElement("li");
-      const mealSrc = data.hits[i].recipe.image;
-      img.setAttribute("src", mealSrc,"uk-cover");
-      mealCrsl.append(mealLi);
-      mealLi.classList.add("uk-cover-continer");
-      mealLi.append(img)
 
-      // img_div.append(img);
-      }
+      const mealSrc = data.hits[0].recipe.image;
+      mealImg.setAttribute("src", mealSrc);
       event.target.reset();
-
+      showMealRecipe(data);
+      return;
+      // for (let i = 0; i <= data.hits.length; i++) {
+      // const img = document.createElement("img");
+      // img_div.append(img);
       // document.body.append(img);
       // }
-      return;
     });
 });
 
-const getRecipeApi = function () {
-  const requestUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=alfredo${appId}${appKey}`;
+const showMealRecipe = function (data) {
+  console.log(data.hits);
+  for (let i = 0; i < data.hits.length; i++) {
+    const mealDataUl = document.querySelector("#mealData");
+    const li = document.createElement("li");
+    const img = document.createElement("img");
+    const aTag = document.createElement("a");
+    const recipeUrl = data.hits[i].recipe.url;
+    const recipeLabel = data.hits[i].recipe.label;
+    const thumbImg = data.hits[i].recipe.images.THUMBNAIL.url;
 
-  fetch(requestUrl)
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log("JSON", data);
-    });
+    aTag.href = recipeUrl;
+    console.log(recipeUrl);
+    aTag.textContent = recipeLabel;
+    aTag.classList.add("uk-align-center", "meal-anchor", "meal-anchor:hover");
+
+    li.textContent = "Recipe Link:";
+
+    li.classList.add("meal-list");
+
+    img.src = thumbImg;
+    li.append(aTag);
+    li.append(img);
+    mealDataUl.append(li);
+  }
 };
 
+const showMealData = function (data) {};
 
-$('#cocktailSearchForm').on('submit', function(event){
-  event.preventDefault()
+$("#cocktailSearchForm").on("submit", function (event) {
+  event.preventDefault();
   //getApi(textBox.value)
   //var box = document.getElementById(inputValue).value
   //console.log(box)
   var cocktailSearch = $("#inputValue").val().trim();
-  console.log(cocktailSearch)
+  console.log(cocktailSearch);
 
-const options = {
-    method: 'GET',
+  const options = {
+    method: "GET",
     headers: {
-      'X-RapidAPI-Key': 'a1e0ee4284mshd4935eda2ae1e5bp1efdf4jsnf6a5c60bb746',
-      'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
-    }
+      "X-RapidAPI-Key": "a1e0ee4284mshd4935eda2ae1e5bp1efdf4jsnf6a5c60bb746",
+      "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
+    },
   };
-  
-  fetch('https://the-cocktail-db.p.rapidapi.com/search.php?s='+ cocktailSearch, options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
 
-})
-  
-
-
+  fetch(
+    "https://the-cocktail-db.p.rapidapi.com/search.php?s=" + cocktailSearch,
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+});
 
 // const cocktailForm = document.querySelector("#cocktailSearchForm");
 
@@ -95,10 +105,9 @@ const options = {
 //     .then((data) => {
 //       console.log(data.hits);
 //       // for (let i = 0; i <= data.hits.length; i++) {
-     
 
 //       event.target.reset();
-      
+
 //       // document.body.append(img);
 //       // }
 //       return;
@@ -117,6 +126,18 @@ const options = {
 //     });
 // };
 
+// const getRecipeApi = function () {
+//   const requestUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=alfredo${appId}${appKey}`;
+
+//   fetch(requestUrl)
+//     .then((res) => {
+//       return res.json();
+//     })
+//     .then((data) => {
+//       console.log("JSON", data);
+//     });
+// };
+
 // uncomment to see api calls in the console
-getCocktailApi();
-getRecipeApi();
+// getCocktailApi();
+// getRecipeApi();
