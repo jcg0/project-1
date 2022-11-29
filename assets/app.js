@@ -10,7 +10,8 @@ const mealImg5 = document.querySelector("#mealImg5");
 
 const randRecipe = document.querySelector('#random-list')
 const randButton = document.querySelector('#get-random-recipe')
-const menuContentEl = document.querySelector('#randomMealData')
+const menuContentEl = document.querySelector('#mealData')
+const randFoodDataUl = document.querySelector('#randomFoodData');
 
 mealForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -31,7 +32,6 @@ mealForm.addEventListener("submit", function (event) {
       event.target.reset();
       showRecipeCarousel(data);
       showMealRecipe(data);
-      showRandomRecipe(data);
       return;
       // for (let i = 0; i <= data.hits.length; i++) {
       // const img = document.createElement("img");
@@ -40,6 +40,25 @@ mealForm.addEventListener("submit", function (event) {
       // }
     });
 });
+
+//random recipe fetch
+randButton.addEventListener('click', function(){
+  const randParam = randRecipe.selectedOptions[0].value
+    
+    fetch(
+      `https://api.edamam.com/api/recipes/v2?type=public${appId}${appKey}&cuisineType=${randParam}&random=true`
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        randFoodDataUl.innerHTML=''
+        showRandomRecipe(data);
+        populateRandRecipe(data);
+        console.log("foodRandom", data);
+        return
+      })
+})
 
 const showRandomRecipe = function (data) {
   const largeImg1 = data.hits[0].recipe.image;
@@ -53,7 +72,49 @@ const showRandomRecipe = function (data) {
   mealImg3.setAttribute("src", largeImg3);
   mealImg4.setAttribute("src", largeImg4);
   mealImg5.setAttribute("src", largeImg5);
-  
+}
+
+const populateRandRecipe = function (data) {
+  for (let i = 0; i < data.hits.length; i++) {
+    const randDiv = document.createElement('div');
+    const randP = document.createElement("p");
+    const randImg = document.createElement("img");
+    const randAnchor = document.createElement("a");
+
+    const recipeUrl = data.hits[i].recipe.url;
+    const recipeLabel = data.hits[i].recipe.label;
+    const thumbImg = data.hits[i].recipe.images.THUMBNAIL.url;
+
+    const drpdwnDivParent = document.createElement("div");
+    const drpdwnDivChild = document.createElement("div");
+    const drpdwnBtn = document.createElement("button");
+
+    drpdwnDivParent.classList.add("uk-inline");
+    drpdwnBtn.classList.add("uk-button", "uk-button-default");
+    drpdwnBtn.setAttribute("type", "button");
+    drpdwnDivChild.setAttribute("uk-dropdown", "mode: hover");
+
+    randImg.classList.add("img");
+    randAnchor.classList.add("uk-align-center", "meal-anchor", "meal-anchor:hover");
+    randP.classList.add("label-p");
+
+    randDiv.classList.add( "meal-list", "uk-card", "uk-card-default", "uk-card-body");
+
+    randAnchor.href = recipeUrl;
+    randImg.src = thumbImg;
+
+    randAnchor.textContent = "Get Recipe!";
+    randP.textContent = recipeLabel;
+
+    randAnchor.setAttribute("target", "_blank");
+
+    randDiv.append(randP);
+    randDiv.append(randImg);
+    randDiv.append(randAnchor);
+
+    randFoodDataUl.append(randDiv);
+  }
+
 }
 
 const showRecipeCarousel = function (data) {
@@ -302,18 +363,3 @@ $("#cocktailSearchForm").on("submit", function (event) {
     });
 });
 
-randButton.addEventListener('click', function(){
-  const randParam = randRecipe.selectedOptions[0].value
-    
-    fetch(
-      `https://api.edamam.com/api/recipes/v2?type=public${appId}${appKey}&cuisineType=${randParam}&random=true`
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        showRandomRecipe(data);
-        console.log("foodRandom", data);
-        return
-      })
-})
