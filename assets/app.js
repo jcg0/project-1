@@ -39,7 +39,7 @@ mealForm.addEventListener("submit", function (event) {
       event.target.reset();
       mealDataDiv.innerHTML = "";
       showRecipeCarousel(data);
-      showRandomRecipe(data);
+
       showMealRecipe(data);
 
       return;
