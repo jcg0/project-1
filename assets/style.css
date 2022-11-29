@@ -3,6 +3,7 @@ body{
     margin: 0;
     padding: 0;
 }
+
 .onlynav{
     text-align: center;
 }
@@ -39,7 +40,6 @@ section{
 .meal-list {
   text-align: center;
   margin: 1em;
-
 }
 
 .meal-anchor{
@@ -76,6 +76,11 @@ section{
 }
 .img {
   margin: auto;
+}
+
+.cocktail-img{
+  height: 175px;
+  width: 175px;
 }
 
 
