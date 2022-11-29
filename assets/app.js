@@ -39,7 +39,7 @@ mealForm.addEventListener("submit", function (event) {
       event.target.reset();
       mealDataDiv.innerHTML = "";
       showRecipeCarousel(data);
-
+      showRandomRecipe(data);
       showMealRecipe(data);
 
       return;
@@ -88,9 +88,10 @@ const showMealRecipe = function (data) {
     const protein = Math.round(data.hits[i].recipe.digest[2].total);
 
     drpdwnDivParent.classList.add("uk-inline");
-    drpdwnBtn.classList.add("uk-button", "uk-button-default", "box-shadow");
+    drpdwnDivChild.classList.add("box-shadow");
+    drpdwnBtn.classList.add("uk-button", "uk-button-default", "more-info");
     drpdwnUl.classList.add("new-ul");
-    img.classList.add("img");
+    img.classList.add("img", "box-shadow");
     aTag.classList.add("uk-align-center", "meal-anchor", "meal-anchor:hover");
     labelP.classList.add("label-p");
     //Use these to populate results onto page.
@@ -99,7 +100,8 @@ const showMealRecipe = function (data) {
       "uk-card",
       "uk-card-default",
       "uk-card-body",
-      "box-shadow"
+      "box-shadow",
+      "card-color"
     );
 
     aTag.href = recipeUrl;
@@ -198,7 +200,7 @@ const populateRandRecipe = function (data) {
     drpdwnBtn.setAttribute("type", "button");
     drpdwnDivChild.setAttribute("uk-dropdown", "mode: hover");
 
-    randImg.classList.add("img");
+    randImg.classList.add("img", "box-shadow");
     randAnchor.classList.add(
       "uk-align-center",
       "meal-anchor",
@@ -210,7 +212,9 @@ const populateRandRecipe = function (data) {
       "meal-list",
       "uk-card",
       "uk-card-default",
-      "uk-card-body"
+      "uk-card-body",
+      "box-shadow",
+      "card-color"
     );
 
     randAnchor.href = recipeUrl;
@@ -272,9 +276,9 @@ $(document).ready(function () {
       })
       .then(function (data) {
         console.log(data);
+
         const drinks = Object.assign({}, data);
         console.log(drinks.drinks);
-
         for (let i = 0; i < drinks.drinks.length; i++) {
           const ingredient = drinks.drinks[i];
           console.log("drinkName" + ingredient["strDrink"]);
@@ -282,8 +286,11 @@ $(document).ready(function () {
           const paragraph = $("<p>");
           const pDrinkIngredient = $("<p>");
           const pDrinkInst = $("<p>");
-          div.addClass("meal-list uk-card uk-card-default uk-card-body");
-          div.text(data.drinks[i].strDrink);
+          div.addClass(
+            "meal-list uk-card uk-card-default uk-card-body box-shadow card-color"
+          );
+          paragraph.text(data.drinks[i].strDrink);
+          paragraph.addClass("label-p");
           pDrinkInst.text(data.drinks[i].strInstructions);
 
           cocktailCard.append(div);
