@@ -11,16 +11,26 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/css/uikit.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Coming+Soon&family=Contrail+One&family=Mukta+Vaani:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
-    <title>Recipe Finder</title>
+    <title>Recipesy</title>
   </head>
 
   <body>
     <!-- Header and Logo Small Nav -->
     <header>
       <div>
-        <h1 class="uk-heading-line uk-text-center uk-animation-scale-up	">
-          <span class="heading-container">RecipeQuest</span>
+        <h1 class="uk-text-center uk-animation-scale-up">
+          <span class="title-word"
+            ><span class="title-word1">Reci</span
+            ><span class="title-word2">pe</span
+            ><span class="title-word3">sy</span>
+          </span>
         </h1>
       </div>
       <nav>
@@ -60,7 +70,8 @@
     <div class="uk-flex uk-flex-center uk-text-center">
       <div
         class="uk-card uk-card-default uk-card-body main-card-div"
-        id="Recipes">
+        id="Recipes"
+      >
         <div class="uk-card-default">
           <div class="uk-card-media-top" id="search-img">
             <!-- carsuel -->
@@ -71,19 +82,44 @@
             >
               <ul class="uk-slideshow-items">
                 <li>
-                  <img id="mealImg1" alt="" src="" uk-cover />
+                  <img
+                    id="mealImg1"
+                    alt=""
+                    src="./assets/images/writing-pad-g636ef4083_1920.jpg"
+                    uk-cover
+                  />
                 </li>
                 <li>
-                  <img id="mealImg2" alt="" src="" uk-cover />
+                  <img
+                    id="mealImg2"
+                    alt=""
+                    src="./assets/images/writing-pad-g636ef4083_1920.jpg"
+                    uk-cover
+                  />
                 </li>
                 <li>
-                  <img id="mealImg3" alt="" src="" uk-cover />
+                  <img
+                    id="mealImg3"
+                    alt=""
+                    src="./assets/images/writing-pad-g636ef4083_1920.jpg"
+                    uk-cover
+                  />
                 </li>
                 <li>
-                  <img id="mealImg4" alt="" src="" uk-cover />
+                  <img
+                    id="mealImg4"
+                    alt=""
+                    src="./assets/images/writing-pad-g636ef4083_1920.jpg"
+                    uk-cover
+                  />
                 </li>
                 <li>
-                  <img id="mealImg5" alt="" src="" uk-cover />
+                  <img
+                    id="mealImg5"
+                    alt=""
+                    src="./assets/images/writing-pad-g636ef4083_1920.jpg"
+                    uk-cover
+                  />
                 </li>
               </ul>
 
@@ -102,7 +138,7 @@
             </div>
           </div>
           <div class="uk-card-body">
-            <h3 class="uk-card-title">Recipes</h3>
+            <h3>Recipes</h3>
             <p>Description, Indgredient and Instructions</p>
           </div>
         </div>
@@ -121,30 +157,30 @@
             <button type="submit">Search</button>
           </form>
           <!-- <form action=""> -->
-            <label>Get random recipe</label>
-              <select id="random-list">
-                <option>American</option>
-                <option>Asian</option>
-                <option>British</option>
-                <option>Central Europe</option>
-                <option>Carribbean</option>
-                <option>Chinese</option>
-                <option>Central Europe</option>
-                <option>French</option>
-                <option>Eastern Europe</option>
-                <option>Indian</option>
-                <option>Italian</option>
-                <option>Japanese</option>
-                <option>Kosher</option>
-                <option>Mediterranean</option>
-                <option>Mexican</option>
-                <option>Middle Eastern</option>
-                <option>Nordic</option>
-                <option>South American</option>
-                <option>South East Asian</option>
-              </select>
-              <br/>
-            <button id="get-random-recipe">Random</button>
+          <label>Get random recipe</label>
+          <select id="random-list">
+            <option>American</option>
+            <option>Asian</option>
+            <option>British</option>
+            <option>Central Europe</option>
+            <option>Carribbean</option>
+            <option>Chinese</option>
+            <option>Central Europe</option>
+            <option>French</option>
+            <option>Eastern Europe</option>
+            <option>Indian</option>
+            <option>Italian</option>
+            <option>Japanese</option>
+            <option>Kosher</option>
+            <option>Mediterranean</option>
+            <option>Mexican</option>
+            <option>Middle Eastern</option>
+            <option>Nordic</option>
+            <option>South American</option>
+            <option>South East Asian</option>
+          </select>
+          <br />
+          <button id="get-random-recipe">Random</button>
           <!-- </form> -->
           <!-- drop down -->
           <!-- <button class="uk-button uk-button-default" type="button">
@@ -167,7 +203,9 @@
         ></div>
         <div
           id="randomMealData"
-          class ="meal-container uk-flex-center uk-text-center" uk-grid></div>
+          class="meal-container uk-flex-center uk-text-center"
+          uk-grid
+        ></div>
       </div>
       <!-- Card for Cocktails -->
       <div class="uk-card uk-card-default uk-card-body main-card-div">
@@ -182,7 +220,7 @@
                 <li>
                   <img
                     id="cocktailImage"
-                    src="./assets/placeholder.jpeg"
+                    src="./assets/images/martini-g3419a1f28_1920.jpg"
                     alt=""
                     uk-cover
                   />
@@ -190,7 +228,7 @@
                 <li>
                   <img
                     id="cocktailImage2"
-                    src="./assets/placeholder.jpeg"
+                    src="./assets/images/martini-g3419a1f28_1920.jpg"
                     alt=""
                     uk-cover
                   />
@@ -198,7 +236,7 @@
                 <li>
                   <img
                     id="cocktailImage3"
-                    src="./assets/placeholder.jpeg"
+                    src="./assets/images/martini-g3419a1f28_1920.jpg"
                     alt=""
                     uk-cover
                   />
@@ -206,7 +244,7 @@
                 <li>
                   <img
                     id="cocktailImage4"
-                    src="./assets/placeholder.jpeg"
+                    src="./assets/images/martini-g3419a1f28_1920.jpg"
                     alt=""
                     uk-cover
                   />
@@ -214,7 +252,7 @@
                 <li>
                   <img
                     id="cocktailImage5"
-                    src="./assets/placeholder.jpeg"
+                    src="./assets/images/martini-g3419a1f28_1920.jpg"
                     alt=""
                     uk-cover
                   />
@@ -236,7 +274,7 @@
             </div>
           </div>
           <div class="uk-card-body">
-            <h3 class="uk-card-title">Cocktails</h3>
+            <h3>Cocktails</h3>
             <p>Description, Ingredient and Instructions</p>
           </div>
         </div>

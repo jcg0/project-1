@@ -1,10 +1,82 @@
+
 body {
+  /* background: #023020; */
   background: rgb(210,38,38);
   background: linear-gradient(0deg, rgba(210,38,38,1) 21%, rgba(219,83,83,1) 39%, rgba(219,114,83,1) 59%, rgba(219,208,83,1) 78%);
-  
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Mukta Vaani', sans-serif;
 }
+
+.title-word {
+  color: 	#F0FFFF;
+  font-size: 300%;
+  font-family: 'Cabin Sketch', cursive;
+  text-shadow: 1px 1px 2px #E5E4E2;
+  cursor: default;
+  transition: .2s;
+}
+
+.title-word1:hover {
+  text-shadow: 1px 1px 2px #F0FFFF, 0 0 1em #F0FFFF, 0 0 0.2em #F0FFFF;
+}
+
+.title-word2 {
+  font-family: 'Cabin Sketch', cursive;
+  /* text-shadow: 1px 1px 4px #6495ED, 0 0 1em #6495ED, 0 0 0.2em #6495ED; */
+
+  color: #6495ED;
+}
+
+.title-word2:hover {
+  text-shadow: 1px 1px 2px #6495ED, 0 0 1em #6495ED, 0 0 0.2em #6495ED;
+}
+
+.title-word3 {
+  font-family: 'Cabin Sketch', cursive;
+  color: #0F52BA;
+  /* text-shadow: 1px 1px 2px #0F52BA, 0 0 1em #0F52BA, 0 0 0.2em #0F52BA; */
+
+}
+
+.title-word3:hover {
+  text-shadow: 1px 1px 2px #0F52BA, 0 0 1em #0F52BA, 0 0 0.2em #0F52BA;
+
+}
+/* 
+.title-word1{
+  --color-1: #CC7722;
+  --color-2: #808000;
+  --color-3: #913831;
+}
+
+.title-word2{
+  --color-1: #CCCCFF;
+  --color-2: #0818A8;
+  --color-3: #6495ED;
+}
+
+.title-word3{
+  --color-1: #CCCCFF;
+  --color-2: #0818A8;
+  --color-3: #6495ED;
+}
+
+.title-word4{
+  --color-1: #CCCCFF;
+  --color-2: #0818A8;
+  --color-3: #6495ED;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+} */
 
 .onlynav{
     text-align: center;
@@ -26,10 +98,6 @@ section{
     opacity: 80%;
 }
 
-.heading-container{
-  background-color: #DBD053;
-}
-
 video{
   width: 62%;
   height: auto;
@@ -40,7 +108,7 @@ video{
  width: 29.5%;
 }
 
-.uk-search, span {
+.uk-search {
     background-color:white;
 }
 
@@ -94,8 +162,8 @@ video{
   width: 175px;
 }
 
-@media (max-width: 390px) {
-  .uk-card-body {
+@media screen and (max-width: 390px) {
+  .main-container {
     display: flow-root;
     padding: 30px 0px;
 }
