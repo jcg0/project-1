@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .onlynav{
     text-align: center;
 }
@@ -50,7 +51,6 @@ video{
 .meal-list {
   text-align: center;
   margin: 1em;
-
 }
 
 .meal-anchor{
@@ -89,11 +89,17 @@ video{
   margin: auto;
 }
 
+.cocktail-img{
+  height: 175px;
+  width: 175px;
+}
+
 @media (max-width: 390px) {
   .uk-card-body {
     display: flow-root;
     padding: 30px 0px;
 }
 }
+
 
 
