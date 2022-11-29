@@ -10,6 +10,7 @@ const mealImg5 = document.querySelector("#mealImg5");
 
 const randRecipe = document.querySelector('#random-list')
 const randButton = document.querySelector('#get-random-recipe')
+const menuContentEl = document.querySelector('#randomMealData')
 
 mealForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -30,6 +31,7 @@ mealForm.addEventListener("submit", function (event) {
       event.target.reset();
       showRecipeCarousel(data);
       showMealRecipe(data);
+      showRandomRecipe(data);
       return;
       // for (let i = 0; i <= data.hits.length; i++) {
       // const img = document.createElement("img");
@@ -39,23 +41,20 @@ mealForm.addEventListener("submit", function (event) {
     });
 });
 
-randButton.addEventListener('click', function(){
-  const randParam = randRecipe.selectedOptions[0].value
-    
-    fetch(
-      `https://api.edamam.com/api/recipes/v2?type=public${appId}${appKey}&cuisineType=${randParam}&random=true`
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log("foodRandom", data);
-
-        return
-      })
-})
-
-
+const showRandomRecipe = function (data) {
+  const largeImg1 = data.hits[0].recipe.image;
+  const largeImg2 = data.hits[1].recipe.image;
+  const largeImg3 = data.hits[2].recipe.image;
+  const largeImg4 = data.hits[3].recipe.image;
+  const largeImg5 = data.hits[4].recipe.image;
+  
+  mealImg1.setAttribute("src", largeImg1);
+  mealImg2.setAttribute("src", largeImg2);
+  mealImg3.setAttribute("src", largeImg3);
+  mealImg4.setAttribute("src", largeImg4);
+  mealImg5.setAttribute("src", largeImg5);
+  
+}
 
 const showRecipeCarousel = function (data) {
   const largeImg1 = data.hits[0].recipe.image;
@@ -302,3 +301,19 @@ $("#cocktailSearchForm").on("submit", function (event) {
       // cocktailSearchForm.append(element)
     });
 });
+
+randButton.addEventListener('click', function(){
+  const randParam = randRecipe.selectedOptions[0].value
+    
+    fetch(
+      `https://api.edamam.com/api/recipes/v2?type=public${appId}${appKey}&cuisineType=${randParam}&random=true`
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        showRandomRecipe(data);
+        console.log("foodRandom", data);
+        return
+      })
+})
