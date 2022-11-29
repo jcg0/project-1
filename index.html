@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    
     <!-- UIkit CSS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link
@@ -21,7 +22,10 @@
     <title>Recipesy</title>
   </head>
 
-  <body>
+  
+
+
+ <body>
     <!-- Header and Logo Small Nav -->
     <header>
       <div>
@@ -42,32 +46,26 @@
       </nav>
     </header>
 
-    <!-- image/video -->
-    <section>
-      <div class="main-image-container">
-        <video
-          src="./assets/foodimage.mp4"
-          loop
-          muted
-          playsinline
-          uk-video="autoplay: inview"
-          class="uk-align-center"
-        ></video>
-      </div>
-    </section>
+  <!-- image/video -->
+  <section>
+    <div class="main-image-container">
+      <video src="./assets/foodimage.mp4" loop muted playsinline uk-video="autoplay: inview"
+        class="uk-align-center"></video>
+    </div>
+  </section>
 
-    <!-- Description on how to use the Application -->
-    <section>
-      <div class="description-container">
-        <p class="description-p">
-          Description and Instructions on how to use the Application
-        </p>
-      </div>
-    </section>
+  <!-- Description on how to use the Application -->
+  <section>
+    <div class="description-container">
+      <p class="description-p">
+        Description and Instructions on how to use the Application
+      </p>
+    </div>
+  </section>
 
-    <!-- cards for Recipes -->
+  <!-- cards for Recipes -->
 
-    <div class="uk-flex uk-flex-center uk-text-center">
+  <div class="uk-flex uk-flex-center uk-text-center">
       <div
         class="uk-card uk-card-default uk-card-body main-card-div"
         id="Recipes"
@@ -123,67 +121,107 @@
                 </li>
               </ul>
 
-              <a
-                class="uk-position-center-left uk-position-small uk-hidden-hover"
-                href="#"
-                uk-slidenav-previous
-                uk-slideshow-item="previous"
-              ></a>
-              <a
-                class="uk-position-center-right uk-position-small uk-hidden-hover"
-                href="#"
-                uk-slidenav-next
-                uk-slideshow-item="next"
-              ></a>
-            </div>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+              uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+              uk-slideshow-item="next"></a>
           </div>
+
           <div class="uk-card-body">
+
             <h3>Recipes</h3>
             <p>Description, Indgredient and Instructions</p>
-          </div>
-        </div>
 
-        <!-- search bar -->
-        <div>
-          <form class="uk-search uk-search-default" id="mealSearchForm">
-            <!-- <a href="" uk-search-icon></a> -->
-            <input
+
+        </div>
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">Recipes</h3>
+          <p>Description, Indgredient and Instructions</p>
+          <div class="button-search">
+            <form class="uk-search uk-search-default search-bar" id="mealSearchForm">
+              <!-- <a href="" uk-search-icon></a> -->
+              <input class="uk-search-input" type="text" placeholder="Recipes" aria-label="Search" name="query" />
+              <button class="uk-search-icon-flip" uk-search-icon></button>
+            </form>
+          </div>
+          <div>
+            <br>
+            <div>
+              <label>Click Random For A New Recipe</label>
+            </div>
+            <br>
+            <select id="random-list">
+              <option>American</option>
+              <option>Asian</option>
+              <option>British</option>
+              <option>Central Europe</option>
+              <option>Carribbean</option>
+              <option>Chinese</option>
+              <option>Central Europe</option>
+              <option>French</option>
+              <option>Eastern Europe</option>
+              <option>Indian</option>
+              <option>Italian</option>
+              <option>Japanese</option>
+              <option>Kosher</option>
+              <option>Mediterranean</option>
+              <option>Mexican</option>
+              <option>Middle Eastern</option>
+              <option>Nordic</option>
+              <option>South American</option>
+              <option>South East Asian</option>
+            </select>
+            <button id="get-random-recipe">Random</button>
+
+
+          </div>
+          
+          <!-- <button id="get-random-recipe">Random</button> -->
+        </div>
+      </div>
+
+      <!-- search bar -->
+      <div>
+        <!-- <form class="uk-search uk-search-default" id="mealSearchForm"> -->
+        <!-- <a href="" uk-search-icon></a> -->
+        <!-- <input
               class="uk-search-input"
               type="text"
               placeholder="Search Recipe"
               aria-label="Search"
               name="query"
             />
-            <button type="submit">Search</button>
-          </form>
-          <!-- <form action=""> -->
-          <label>Get random recipe</label>
-          <select id="random-list">
-            <option>American</option>
-            <option>Asian</option>
-            <option>British</option>
-            <option>Central Europe</option>
-            <option>Carribbean</option>
-            <option>Chinese</option>
-            <option>Central Europe</option>
-            <option>French</option>
-            <option>Eastern Europe</option>
-            <option>Indian</option>
-            <option>Italian</option>
-            <option>Japanese</option>
-            <option>Kosher</option>
-            <option>Mediterranean</option>
-            <option>Mexican</option>
-            <option>Middle Eastern</option>
-            <option>Nordic</option>
-            <option>South American</option>
-            <option>South East Asian</option>
-          </select>
-          <br />
-          <button id="get-random-recipe">Random</button>
-          <!-- </form> -->
-          <!-- drop down -->
-          <!-- <button class="uk-button uk-button-default" type="button">
+
+            <button class= "uk-button uk-button-default" type="submit">Search</button>
+          </form> -->
+        <!-- <form action=""> -->
+        <!-- <label>Get random recipe</label>
+              <select id="random-list">
+                <option>American</option>
+                <option>Asian</option>
+                <option>British</option>
+                <option>Central Europe</option>
+                <option>Carribbean</option>
+                <option>Chinese</option>
+                <option>Central Europe</option>
+                <option>French</option>
+                <option>Eastern Europe</option>
+                <option>Indian</option>
+                <option>Italian</option>
+                <option>Japanese</option>
+                <option>Kosher</option>
+                <option>Mediterranean</option>
+                <option>Mexican</option>
+                <option>Middle Eastern</option>
+                <option>Nordic</option>
+                <option>South American</option>
+                <option>South East Asian</option>
+              </select>
+              <br/>
+            <button id="get-random-recipe">Random</button> -->
+        <!-- </form> -->
+        <!-- drop down -->
+        <!-- <button class="uk-button uk-button-default" type="button">
             Dropdown
           </button>
           <div uk-dropdown="mode: click">
@@ -193,22 +231,27 @@
               <li><a href="">blank</a></li>
             </ul>
           </div> -->
+
         </div>
 
         <!-- <ul id="mealData" class="uk-align-center"></ul> -->
         <div
-          id="mealData"
+          id="mealData" 
           class="meal-container uk-flex-center uk-text-center"
           uk-grid
         ></div>
         <div
-          id="randomMealData"
-          class="meal-container uk-flex-center uk-text-center"
-          uk-grid
-        ></div>
+
+          id="randomFoodData"
+          class ="meal-container uk-flex-center uk-text-center" uk-grid>
+         </div>
+
       </div>
+
       <!-- Card for Cocktails -->
-      <div class="uk-card uk-card-default uk-card-body main-card-div">
+      <div
+        class="uk-card uk-card-default uk-card-body main-card-div"
+      >
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top" id="search-img">
             <div
@@ -223,42 +266,50 @@
                     src="./assets/images/martini-g3419a1f28_1920.jpg"
                     alt=""
                     uk-cover
-                  />
+                    
+                  /> 
                 </li>
                 <li>
                   <img
+
                     id="cocktailImage2"
                     src="./assets/images/martini-g3419a1f28_1920.jpg"
+
                     alt=""
                     uk-cover
                   />
                 </li>
                 <li>
                   <img
+
                     id="cocktailImage3"
                     src="./assets/images/martini-g3419a1f28_1920.jpg"
+
                     alt=""
                     uk-cover
                   />
                 </li>
                 <li>
                   <img
+
                     id="cocktailImage4"
                     src="./assets/images/martini-g3419a1f28_1920.jpg"
+
                     alt=""
                     uk-cover
                   />
                 </li>
                 <li>
                   <img
+
                     id="cocktailImage5"
                     src="./assets/images/martini-g3419a1f28_1920.jpg"
+
                     alt=""
                     uk-cover
                   />
                 </li>
               </ul>
-
               <a
                 class="uk-position-center-left uk-position-small uk-hidden-hover"
                 href="#"
@@ -276,28 +327,35 @@
           <div class="uk-card-body">
             <h3>Cocktails</h3>
             <p>Description, Ingredient and Instructions</p>
+
           </div>
         </div>
+        <div
+          id="cocktailData"
+          class="meal-container uk-flex-center uk-text-center"
+          uk-grid
+        ></div>
+      </div>
+    </div>    
+    <!-- JavaScript -->
 
-        <!-- search bar -->
+      </div>
 
-        <div>
-          <form class="uk-search uk-search-default" id="cocktailSearchForm">
-            <input
-              id="inputValue"
-              class="uk-search-input"
-              type="search"
-              placeholder="Search Recipe"
-              aria-label="Search"
-              name="query"
-            />
-            <button type="submit">Search</button>
-          </form>
-        </div>
+      <!-- search bar -->
+
+      <div>
+        <form class="uk-search uk-search-default" id="cocktailSearchForm">
+          <input id="inputValue" class="uk-search-input" type="search" placeholder="Search Recipe" aria-label="Search"
+            name="query" />
+          <button type="submit">Search</button>
+        </form>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit-icons.min.js"></script>
-    <script src="./assets/app.js"></script>
-  </body>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit-icons.min.js"></script>
+  <script src="./assets/app.js"></script>
+</body>
+
+
 </html>
