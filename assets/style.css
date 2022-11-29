@@ -8,6 +8,13 @@ body {
   font-family: 'Mukta Vaani', sans-serif;
 }
 
+
+
+.box-shadow {
+  border: 1px solid black;
+  box-shadow: 3px 3px 2px 1px black;
+}
+
 .title-word {
   color: 	#F0FFFF;
   font-size: 300%;
@@ -152,6 +159,7 @@ video{
 
 .label-p{
   font-size: 150%;
+  font-family: 'Cabin Sketch', cursive;
 }
 .img {
   margin: auto;
