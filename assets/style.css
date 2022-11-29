@@ -1,6 +1,102 @@
-body{
-    background-color: darkgrey;
+:root{
+  --main-card-color: #FAF9F6;
 }
+
+
+body {
+  /* background: #023020; */
+  background: rgb(210,38,38);
+  background: linear-gradient(0deg, rgba(210,38,38,1) 21%, rgba(219,83,83,1) 39%, rgba(219,114,83,1) 59%, rgba(219,208,83,1) 78%);
+  margin: 0;
+  padding: 0;
+  font-family: 'Mukta Vaani', sans-serif;
+}
+
+
+
+.box-shadow {
+  border: 1px solid black;
+  box-shadow: 3px 3px 2px 1px black;
+}
+
+/* input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 250px;
+} */
+
+.title-word {
+  color: 	#F0FFFF;
+  font-size: 300%;
+  font-family: 'Cabin Sketch', cursive;
+  text-shadow: 1px 1px 2px #E5E4E2;
+  cursor: default;
+  transition: .2s;
+}
+
+.title-word1:hover {
+  text-shadow: 1px 1px 2px #F0FFFF, 0 0 1em #F0FFFF, 0 0 0.2em #F0FFFF;
+}
+
+.title-word2 {
+  font-family: 'Cabin Sketch', cursive;
+  /* text-shadow: 1px 1px 4px #6495ED, 0 0 1em #6495ED, 0 0 0.2em #6495ED; */
+
+  color: #6495ED;
+}
+
+.title-word2:hover {
+  text-shadow: 1px 1px 2px #6495ED, 0 0 1em #6495ED, 0 0 0.2em #6495ED;
+}
+
+.title-word3 {
+  font-family: 'Cabin Sketch', cursive;
+  color: #0F52BA;
+  /* text-shadow: 1px 1px 2px #0F52BA, 0 0 1em #0F52BA, 0 0 0.2em #0F52BA; */
+
+}
+
+.title-word3:hover {
+  text-shadow: 1px 1px 2px #0F52BA, 0 0 1em #0F52BA, 0 0 0.2em #0F52BA;
+
+}
+/* 
+.title-word1{
+  --color-1: #CC7722;
+  --color-2: #808000;
+  --color-3: #913831;
+}
+
+.title-word2{
+  --color-1: #CCCCFF;
+  --color-2: #0818A8;
+  --color-3: #6495ED;
+}
+
+.title-word3{
+  --color-1: #CCCCFF;
+  --color-2: #0818A8;
+  --color-3: #6495ED;
+}
+
+.title-word4{
+  --color-1: #CCCCFF;
+  --color-2: #0818A8;
+  --color-3: #6495ED;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+} */
+
 .onlynav{
     text-align: center;
 }
@@ -15,14 +111,156 @@ section{
     padding:30px;
     justify-content:center;
     background-color:white;
-    width: 945px;
+    width: 57.7%;
     margin-top: -6px;
     margin-bottom:6px;
     opacity: 80%;
+    font-size: 120%;
 }
 
-.uk-search, span {
-    background-color:white;
+video{
+  width: 62%;
+  height: auto;
+}
+
+.main-card-div{
+ margin: 1.1em;
+ width: 29.5%;
+ 
+}
+
+.uk-search {
+    background-color:var(--main-card-color);
+    transition: .2s;
+}
+
+.uk-search:hover {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.btn-icon {
+  border-left: 1px solid lightgray;
+  transition: .2s;
+}
+
+.btn-icon:hover {
+  border-left: 1px solid black;
+}
+
+.rand-btn {
+  height: 40px;
+  width: 90px;
+  background-color: #0F52BA;
+  cursor: pointer;
+  border: 1px solid black;
+  transition: border-color .2s, background-color .2s;
+  color: var(--main-card-color);
+}
+
+.rand-btn:hover {
+  text-decoration: none;
+  box-shadow: 3px 3px 2px 1px black;
+  background-color: #6495ED ;
+  color: white;
+}
+
+.select{
+  height: 40px;
+  width: 165px;
+}
+
+.meal-container {
+  margin: auto;
+  
+}
+
+.card-color{
+  background-color: var(--main-card-color);
+}
+
+.meal-list {
+  text-align: center;
+  margin: 1em;
+}
+
+.meal-anchor{
+  
+  background-color: #0F52BA;
+  border: 1px solid black;
+  /* border-radius: 7px; */
+  width: 175px;
+  height: 30px;
+  align-content: center;
+  color:var(--main-card-color);
+  transition: border-color .2s, background-color .2s;
+  overflow-wrap: break-word;
+}
+
+.meal-anchor:hover{
+  text-decoration: none;
+  box-shadow: 3px 3px 2px 1px black;
+  background-color: #6495ED ;
+  color: white;
+}
+
+.new-ul {
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+  margin: 2px;
+}
+
+.label-p{
+  font-size: 200%;
+  font-family: 'Cabin Sketch', cursive;
+}
+.img {
+  margin: auto;
+}
+
+.cocktail-img{
+  height: 175px;
+  width: 175px;
+}
+
+
+.button-search{
+  display:flex;
+  justify-content:center;
+}
+.search-bar{
+display: flex;
+justify-content: center;
+flex-wrap: nowrap;
+align-items: center;
+}
+
+.drp-label{
+  padding:30px;
+  text-align: center;
+}
+
+.more-info{
+  background-color: #0F52BA;
+  border: 1px solid black;
+  color:var(--main-card-color);
+  transition: border-color .2s, background-color .2s;
+}
+
+.more-info:hover {
+  box-shadow: 3px 3px 2px 1px black;
+  background-color: #6495ED ;
+  color: white;
+  border: 1px solid black;
+}
+
+@media (max-width: 1000px) {
+  .uk-card-body {
+    display: flow-root;
+    padding: 30px 0px;
+    
+}
 }
 
 .meal-list {
