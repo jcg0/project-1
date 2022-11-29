@@ -8,6 +8,10 @@ const mealImg3 = document.querySelector("#mealImg3");
 const mealImg4 = document.querySelector("#mealImg4");
 const mealImg5 = document.querySelector("#mealImg5");
 
+const randRecipe = document.querySelector('#random-list')
+const randButton = document.querySelector('#get-random-recipe')
+const menuContentEl = document.querySelector('#randomMealData')
+
 mealForm.addEventListener("submit", function (event) {
   event.preventDefault();
   // console.dir is a way to see all the properties of a javascript object.
@@ -21,12 +25,13 @@ mealForm.addEventListener("submit", function (event) {
       return res.json();
     })
     .then((data) => {
-      console.log(data.hits);
+      console.log(data);
       // const mealSrc = data.hits[0].recipe.image;
       // mealImg.setAttribute("src", mealSrc);
       event.target.reset();
       showRecipeCarousel(data);
       showMealRecipe(data);
+      showRandomRecipe(data);
       return;
       // for (let i = 0; i <= data.hits.length; i++) {
       // const img = document.createElement("img");
@@ -35,6 +40,21 @@ mealForm.addEventListener("submit", function (event) {
       // }
     });
 });
+
+const showRandomRecipe = function (data) {
+  const largeImg1 = data.hits[0].recipe.image;
+  const largeImg2 = data.hits[1].recipe.image;
+  const largeImg3 = data.hits[2].recipe.image;
+  const largeImg4 = data.hits[3].recipe.image;
+  const largeImg5 = data.hits[4].recipe.image;
+  
+  mealImg1.setAttribute("src", largeImg1);
+  mealImg2.setAttribute("src", largeImg2);
+  mealImg3.setAttribute("src", largeImg3);
+  mealImg4.setAttribute("src", largeImg4);
+  mealImg5.setAttribute("src", largeImg5);
+  
+}
 
 const showRecipeCarousel = function (data) {
   const largeImg1 = data.hits[0].recipe.image;
@@ -85,12 +105,13 @@ const showMealRecipe = function (data) {
     img.classList.add("img");
     aTag.classList.add("uk-align-center", "meal-anchor", "meal-anchor:hover");
     labelP.classList.add("label-p");
-    div.classList.add(
+    //Use these to populate results onto page.
+    div.classList.add( 
       "meal-list",
       "uk-card",
       "uk-card-default",
       "uk-card-body"
-    );
+    ); 
 
     aTag.href = recipeUrl;
     img.src = thumbImg;
@@ -280,3 +301,19 @@ $("#cocktailSearchForm").on("submit", function (event) {
       // cocktailSearchForm.append(element)
     });
 });
+
+randButton.addEventListener('click', function(){
+  const randParam = randRecipe.selectedOptions[0].value
+    
+    fetch(
+      `https://api.edamam.com/api/recipes/v2?type=public${appId}${appKey}&cuisineType=${randParam}&random=true`
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        showRandomRecipe(data);
+        console.log("foodRandom", data);
+        return
+      })
+})

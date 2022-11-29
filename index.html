@@ -62,8 +62,7 @@
     <div class="uk-flex uk-flex-center uk-text-center">
       <div
         class="uk-card uk-card-default uk-card-body main-card-div"
-        id="Recipes"
-      >
+        id="Recipes">
         <div class="uk-card-default">
           <div class="uk-card-media-top" id="search-img">
             <!-- carsuel -->
@@ -148,6 +147,32 @@
             />
             <button type="submit">Search</button>
           </form>
+          <!-- <form action=""> -->
+            <label>Get random recipe</label>
+              <select id="random-list">
+                <option>American</option>
+                <option>Asian</option>
+                <option>British</option>
+                <option>Central Europe</option>
+                <option>Carribbean</option>
+                <option>Chinese</option>
+                <option>Central Europe</option>
+                <option>French</option>
+                <option>Eastern Europe</option>
+                <option>Indian</option>
+                <option>Italian</option>
+                <option>Japanese</option>
+                <option>Kosher</option>
+                <option>Mediterranean</option>
+                <option>Mexican</option>
+                <option>Middle Eastern</option>
+                <option>Nordic</option>
+                <option>South American</option>
+                <option>South East Asian</option>
+              </select>
+              <br/>
+            <button id="get-random-recipe">Random</button>
+          <!-- </form> -->
           <!-- drop down -->
           <!-- <button class="uk-button uk-button-default" type="button">
             Dropdown
@@ -167,6 +192,9 @@
           class="meal-container uk-flex-center uk-text-center"
           uk-grid
         ></div>
+        <div
+          id="randomMealData"
+          class ="meal-container uk-flex-center uk-text-center" uk-grid></div>
       </div>
       <!-- Card for Cocktails -->
       <div
