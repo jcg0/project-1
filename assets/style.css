@@ -1,5 +1,5 @@
 body{
-    background-color: darkgrey;
+    background-color:darkgrey;
     margin: 0;
     padding: 0;
 }
@@ -17,15 +17,20 @@ section{
     padding:30px;
     justify-content:center;
     background-color:white;
-    width: 77.7%;
+    width: 57.7%;
     margin-top: -6px;
     margin-bottom:6px;
     opacity: 80%;
 }
 
+video{
+  width: 62%;
+  height: auto;
+}
+
 .main-card-div{
  margin: 1.1em;
- width: 39.5%;
+ width: 29.5%;
 }
 
 .uk-search, span {
@@ -78,5 +83,11 @@ section{
   margin: auto;
 }
 
+@media (max-width: 390px) {
+  .uk-card-body {
+    display: flow-root;
+    padding: 30px 0px;
+}
+}
 
 
