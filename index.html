@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- UIkit CSS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/css/uikit.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Coming+Soon&family=Contrail+One&family=Mukta+Vaani:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Recipesy</title>
+  </head>
 
-  <!-- UIkit CSS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/css/uikit.min.css" />
-  <link rel="stylesheet" href="./assets/style.css" />
-  <title>Recipe Finder</title>
-</head>
+  
 
-<body>
-  <!-- Header and Logo Small Nav -->
-  <header>
-    <div>
-      <h1 class="uk-heading-line uk-text-center uk-animation-scale-up	">
-        <span class="heading-container">RecipeQuest</span>
-      </h1>
-    </div>
-    <nav>
-      <div class="onlynav">
-        <strong>
-          <a href="#Recipes"> Food or Drinks?</a>
-        </strong>
+
+ <body>
+    <!-- Header and Logo Small Nav -->
+    <header>
+      <div>
+        <h1 class="uk-text-center uk-animation-scale-up">
+          <span class="title-word"
+            ><span class="title-word1">Reci</span
+            ><span class="title-word2">pe</span
+            ><span class="title-word3">sy</span>
+          </span>
+        </h1>
       </div>
-    </nav>
-  </header>
+      <nav>
+        <div class="onlynav">
+          <strong>
+            <a href="#Recipes"> Food or Drinks?</a>
+          </strong>
+        </div>
+      </nav>
+    </header>
 
   <!-- image/video -->
   <section>
@@ -50,29 +66,60 @@
   <!-- cards for Recipes -->
 
   <div class="uk-flex uk-flex-center uk-text-center">
-    <div class="uk-card uk-card-default uk-card-body main-card-div" id="Recipes">
-      <div class="uk-card-default">
-        <div class="uk-card-media-top" id="search-img">
-          <!-- carsuel -->
-          <div class="uk-position-relative uk-visible-toggle uk-light uk-flex-center" tabindex="-1"
-            uk-slideshow="animation: push">
-            <ul class="uk-slideshow-items">
-              <li>
-                <img id="mealImg1" alt="" src="" uk-cover />
-              </li>
-              <li>
-                <img id="mealImg2" alt="" src="" uk-cover />
-              </li>
-              <li>
-                <img id="mealImg3" alt="" src="" uk-cover />
-              </li>
-              <li>
-                <img id="mealImg4" alt="" src="" uk-cover />
-              </li>
-              <li>
-                <img id="mealImg5" alt="" src="" uk-cover />
-              </li>
-            </ul>
+      <div
+        class="uk-card uk-card-default uk-card-body main-card-div"
+        id="Recipes"
+      >
+        <div class="uk-card-default">
+          <div class="uk-card-media-top" id="search-img">
+            <!-- carsuel -->
+            <div
+              class="uk-position-relative uk-visible-toggle uk-light uk-flex-center"
+              tabindex="-1"
+              uk-slideshow="animation: push"
+            >
+              <ul class="uk-slideshow-items">
+                <li>
+                  <img
+                    id="mealImg1"
+                    alt=""
+                    src="./assets/images/writing-pad-g636ef4083_1920.jpg"
+                    uk-cover
+                  />
+                </li>
+                <li>
+                  <img
+                    id="mealImg2"
+                    alt=""
+                    src="./assets/images/writing-pad-g636ef4083_1920.jpg"
+                    uk-cover
+                  />
+                </li>
+                <li>
+                  <img
+                    id="mealImg3"
+                    alt=""
+                    src="./assets/images/writing-pad-g636ef4083_1920.jpg"
+                    uk-cover
+                  />
+                </li>
+                <li>
+                  <img
+                    id="mealImg4"
+                    alt=""
+                    src="./assets/images/writing-pad-g636ef4083_1920.jpg"
+                    uk-cover
+                  />
+                </li>
+                <li>
+                  <img
+                    id="mealImg5"
+                    alt=""
+                    src="./assets/images/writing-pad-g636ef4083_1920.jpg"
+                    uk-cover
+                  />
+                </li>
+              </ul>
 
             <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
               uk-slideshow-item="previous"></a>
@@ -81,8 +128,10 @@
           </div>
 
           <div class="uk-card-body">
-            <h3 class="uk-card-title">Recipes</h3>
-            <p>Description, Ingredient and Instructions</p>
+
+            <h3>Recipes</h3>
+            <p>Description, Indgredient and Instructions</p>
+
 
         </div>
         <div class="uk-card-body">
@@ -124,6 +173,7 @@
             </select>
             <button id="get-random-recipe">Random</button>
 
+
           </div>
           
           <!-- <button id="get-random-recipe">Random</button> -->
@@ -141,6 +191,7 @@
               aria-label="Search"
               name="query"
             />
+
             <button class= "uk-button uk-button-default" type="submit">Search</button>
           </form> -->
         <!-- <form action=""> -->
@@ -190,8 +241,10 @@
           uk-grid
         ></div>
         <div
+
           id="randomFoodData"
-          class ="meal-container uk-flex-center uk-text-center" uk-grid></div>
+          class ="meal-container uk-flex-center uk-text-center" uk-grid>
+         </div>
 
       </div>
 
@@ -210,7 +263,7 @@
                 <li>
                   <img
                     id="cocktailImage"
-                    src="./assets/placeholder.jpeg"
+                    src="./assets/images/martini-g3419a1f28_1920.jpg"
                     alt=""
                     uk-cover
                     
@@ -218,78 +271,65 @@
                 </li>
                 <li>
                   <img
-                    id="cocktailImage1"
-                    src="./assets/placeholder.jpeg"
-                    alt=""
-                    uk-cover
-                  />
-                </li>
-                <li>
-                  <img
+
                     id="cocktailImage2"
-                    src="./assets/placeholder.jpeg"
+                    src="./assets/images/martini-g3419a1f28_1920.jpg"
+
                     alt=""
                     uk-cover
                   />
                 </li>
                 <li>
                   <img
+
                     id="cocktailImage3"
-                    src="./assets/placeholder.jpeg"
+                    src="./assets/images/martini-g3419a1f28_1920.jpg"
+
                     alt=""
                     uk-cover
                   />
                 </li>
                 <li>
                   <img
+
                     id="cocktailImage4"
-                    src="./assets/placeholder.jpeg"
+                    src="./assets/images/martini-g3419a1f28_1920.jpg"
+
+                    alt=""
+                    uk-cover
+                  />
+                </li>
+                <li>
+                  <img
+
+                    id="cocktailImage5"
+                    src="./assets/images/martini-g3419a1f28_1920.jpg"
+
                     alt=""
                     uk-cover
                   />
                 </li>
               </ul>
+              <a
+                class="uk-position-center-left uk-position-small uk-hidden-hover"
+                href="#"
+                uk-slidenav-previous
+                uk-slideshow-item="previous"
+              ></a>
+              <a
+                class="uk-position-center-right uk-position-small uk-hidden-hover"
+                href="#"
+                uk-slidenav-next
+                uk-slideshow-item="next"
+              ></a>
+            </div>
+          </div>
+          <div class="uk-card-body">
+            <h3>Cocktails</h3>
+            <p>Description, Ingredient and Instructions</p>
 
-
-
-      <!-- <ul id="mealData" class="uk-align-center"></ul> -->
-      <div id="mealData" class="meal-container uk-flex-center uk-text-center" uk-grid></div>
-      <div id="randomMealData" class="meal-container uk-flex-center uk-text-center" uk-grid></div>
-    </div>
-    <!-- Card for Cocktails -->
-    <div class="uk-card uk-card-default uk-card-body main-card-div">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-media-top" id="search-img">
-          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: push">
-            <ul class="uk-slideshow-items">
-              <li>
-                <img id="cocktailImage" src="./assets/placeholder.jpeg" alt="" uk-cover />
-              </li>
-              <li>
-                <img id="cocktailImage2" src="./assets/placeholder.jpeg" alt="" uk-cover />
-              </li>
-              <li>
-                <img id="cocktailImage3" src="./assets/placeholder.jpeg" alt="" uk-cover />
-              </li>
-              <li>
-                <img id="cocktailImage4" src="./assets/placeholder.jpeg" alt="" uk-cover />
-              </li>
-              <li>
-                <img id="cocktailImage5" src="./assets/placeholder.jpeg" alt="" uk-cover />
-              </li>
-            </ul>
-
-            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
-              uk-slideshow-item="previous"></a>
-            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
-              uk-slideshow-item="next"></a>
           </div>
         </div>
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">Cocktails</h3>
-          <p>Description, Ingredient and Instructions</p>
-        </div>
-
         <div
           id="cocktailData"
           class="meal-container uk-flex-center uk-text-center"
