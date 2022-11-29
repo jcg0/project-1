@@ -127,16 +127,9 @@
               uk-slideshow-item="next"></a>
           </div>
 
-          <div class="uk-card-body">
-
-            <h3>Recipes</h3>
-            <p>Description, Indgredient and Instructions</p>
-
-
-        </div>
         <div class="uk-card-body">
           <h3 class="uk-card-title">Recipes</h3>
-          <p>Description, Indgredient and Instructions</p>
+          <p>Description, Ingredient and Instructions</p>
           <div class="button-search">
             <form class="uk-search uk-search-default search-bar" id="mealSearchForm">
               <!-- <a href="" uk-search-icon></a> -->
@@ -181,10 +174,10 @@
       </div>
 
       <!-- search bar -->
-      <div>
-        <!-- <form class="uk-search uk-search-default" id="mealSearchForm"> -->
-        <!-- <a href="" uk-search-icon></a> -->
-        <!-- <input
+      <!-- <div>
+        <form class="uk-search uk-search-default" id="mealSearchForm">
+        <a href="" uk-search-icon></a>
+        <input
               class="uk-search-input"
               type="text"
               placeholder="Search Recipe"
@@ -334,8 +327,16 @@
           id="cocktailData"
           class="meal-container uk-flex-center uk-text-center"
           uk-grid
-        ></div>
+        ><div>
+          <form class="uk-search uk-search-default" id="cocktailSearchForm">
+            <input id="inputValue" class="uk-search-input" type="search" placeholder="Search Recipe" aria-label="Search"
+              name="query" />
+            <button type="submit">Search</button>
+          </form>
+        </div>
       </div>
+      </div>
+      
     </div>    
     <!-- JavaScript -->
 
@@ -343,13 +344,7 @@
 
       <!-- search bar -->
 
-      <div>
-        <form class="uk-search uk-search-default" id="cocktailSearchForm">
-          <input id="inputValue" class="uk-search-input" type="search" placeholder="Search Recipe" aria-label="Search"
-            name="query" />
-          <button type="submit">Search</button>
-        </form>
-      </div>
+      
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit.min.js"></script>
