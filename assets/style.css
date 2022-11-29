@@ -106,6 +106,7 @@ video{
 .main-card-div{
  margin: 1.1em;
  width: 29.5%;
+ 
 }
 
 .uk-search {
@@ -179,12 +180,11 @@ label{
 }
 
 
-@media (max-width: 390px) {
+@media (max-width: 1000px) {
   .uk-card-body {
     display: flow-root;
     padding: 30px 0px;
+    
 }
 }
-
-
 
