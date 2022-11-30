@@ -32,16 +32,10 @@ mealForm.addEventListener("submit", function (event) {
     })
     .then((data) => {
       console.log(data);
-
-      // const mealSrc = data.hits[0].recipe.image;
-      // mealImg.setAttribute("src", mealSrc);
-
       event.target.reset();
       mealDataDiv.innerHTML = "";
       showRecipeCarousel(data);
-
       showMealRecipe(data);
-
       return;
     });
 });
@@ -111,16 +105,14 @@ const showMealRecipe = function (data) {
     drpdwnLi2.textContent = `Warning this recipe contains: ${cautions}`;
     drpdwnLi3.textContent = `Protein: ${protein}g`;
     drpdwnLi4.textContent = `Carbs: ${carbs}g`;
+    aTag.textContent = "Get Recipe!";
+    labelP.textContent = recipeLabel;
 
     if (cautions.length > 0) {
       drpdwnLi2.textContent = `Warning this recipe contains: ${cautions}`;
     } else {
       drpdwnLi2.textContent = "";
     }
-
-    aTag.textContent = "Get Recipe!";
-
-    labelP.textContent = recipeLabel;
 
     drpdwnBtn.setAttribute("type", "button");
     drpdwnDivChild.setAttribute(
@@ -166,6 +158,7 @@ randButton.addEventListener("click", function () {
     });
 });
 
+//shows random recipe images in the carousel
 const showRandomRecipe = function (data) {
   const largeImg1 = data.hits[0].recipe.image;
   const largeImg2 = data.hits[1].recipe.image;
@@ -180,6 +173,7 @@ const showRandomRecipe = function (data) {
   mealImg5.setAttribute("src", largeImg5);
 };
 
+//creates div with random recipe info
 const populateRandRecipe = function (data) {
   for (let i = 0; i < data.hits.length; i++) {
     const randDiv = document.createElement("div");
@@ -233,25 +227,6 @@ const populateRandRecipe = function (data) {
   }
 };
 
-// function getCocktail(data){
-//   for (let i = 0; i < data.drinks.length; i++) {
-
-//     const div = $('<div>');
-//     const paragraph = $('<p>');
-//     const pDrinkIngredient = $('<p>')
-//     const pDrinkInst = $('<p>')
-//     div.addClass('meal-list uk-card uk-card-default uk-card-body')
-//     div.text(data.drinks[i].strDrink);
-//     pDrinkInst.text(data.drinks[i].strInstructions);
-
-//     cocktailCard.append(div);
-//     div.append(paragraph);
-//     div.append(pDrinkIngredient);
-//     div.append(pDrinkInst);
-
-//   }
-// }
-
 // cocktail search function.
 $(document).ready(function () {
   $("#cocktailSearchForm").on("submit", function (event) {
@@ -303,7 +278,6 @@ $(document).ready(function () {
             div.addClass("meal-list uk-card uk-card-default uk-card-body");
 
             const pDrinkIngredient = $("<p>");
-            // cocktailCard.append(div);
             div.append(pDrinkIngredient);
             pDrinkIngredient.text(ingredient["strIngredient" + j]);
             cocktailCard.append(pDrinkIngredient);
@@ -320,67 +294,17 @@ $(document).ready(function () {
           data.drinks[3].strDrinkThumb,
           data.drinks[4].strDrinkThumb,
         ];
-        //   //This loop will run through the ingredients needed for the drink.
-        //   for (let i = 1; i < drinkList.length; i++) {
-        //     // console.log(i);
-
-        //     ingredient = data.drinks[0][`strIngredient${i}`];
-
-        //     console.log(ingredient);
-        //     $('#drinkIngredient').append(' ' + ingredient + '');
-        //   }
-
-        //   for (let i = 1; i < drinkList.length; i++) {
-        //     //console.log(i);
-        //     thumbNail = data.drinks[i].strDrinkThumb;
-        //     $('#cocktailImage').attr('src', thumbNail);
-        //     console.log(thumbNail)
-        //     // console.log(ingredient1);
-        //   }
-
-        //   // for (let i = 1; i < drinkList.length; i++) {
-        //   //   //console.log(i);
-        //   //   ingredient2 = data.drinks[2][`strIngredient${i}`];
-        //   //   console.log(ingredient2);
-        //   // }
-
-        //   // for (let i = 1; i < drinkList.length; i++) {
-        //   //   //console.log(i);
-        //   //   ingredient3 = data.drinks[3][`strIngredient${i}`];
-        //   //   console.log(ingredient3);
-        //   // }
-
-        //   // for (let i = 1; i < drinkList.length; i++) {
-        //   //   //console.log(i);
-        //   //   ingredient4 = data.drinks[4][`strIngredient${i}`];
-        //   //   console.log(ingredient4);
-        //   // }
 
         $("#cocktailImage").attr("src", drinkImg[0]);
         $("#cocktailImage1").attr("src", drinkImg[1]);
         $("#cocktailImage2").attr("src", drinkImg[2]);
         $("#cocktailImage3").attr("src", drinkImg[3]);
         $("#cocktailImage4").attr("src", drinkImg[4]);
-
-        //   // this loop is only bring back null, not sure why yet.
-        //   // for (let i = 1; i < 16; i++) {
-        //   //   //console.log(i);
-        //   //   measure = data.drinks[0][`strMeasure${i}`];
-        //   //   console.log(measure);
-        //   // };
-
-        //   // const imgDrink = document.createElement("img");
-        //   // imgDrink.src = data.drinks[1].strDrinkThumb;
-        //   // let img_Drink = document.getElementById("cocktailImg");
-        //   // img_Drink.append(imgDrink);
-
-        //   // cocktailSearchForm.append(element)
       });
   });
 });
 
 // cocktail search function.
-
 $(document).ready(function () {
   $("#cocktailSearchForm").on("submit", function (event) {
     event.preventDefault();
@@ -405,131 +329,6 @@ $(document).ready(function () {
       .then(function (data) {
         console.log(data);
         getCocktailName(data);
-        // const cocktailDataUl = document.querySelector("#cocktailData");
-        // const div = document.createElement("div");
-        // const img = document.createElement("img");
-        // const aTag = document.createElement("a");
-        // const ul = document.createElement("ul");
-        // const li1 = document.createElement("li");
-        // const li2 = document.createElement("li");
-        // const li3 = document.createElement("li");
-        // const labelP = document.createElement("p");
-
-        // ul.classList.add("new-ul");
-        // li2.classList.add("new-li");
-        // img.classList.add("img");
-        // aTag.classList.add("uk-align-center", "meal-anchor", "meal-anchor:hover");
-        // labelP.classList.add("label-p");
-        // div.classList.add(
-        //   "meal-list",
-        //   "uk-card",
-        //   "uk-card-default",
-        //   "uk-card-body"
-        // );
-
-        // aTag.href = recipeUrl;
-        // img.src = thumbImg;
-        // aTag.textContent = "Get Recipe!";
-
-        // labelP.textContent = recipeLabel;
-
-        // const drinkList = data.drinks;
-
-        // const drinkImg = [
-        //   data.drinks[0].strDrinkThumb,
-        //   data.drinks[1].strDrinkThumb,
-        //   data.drinks[2].strDrinkThumb,
-        //   data.drinks[3].strDrinkThumb,
-        //   data.drinks[4].strDrinkThumb,
-        // ];
-
-        // const drinkDirections = [
-        //   data.drinks[0].strInstructions,
-        //   data.drinks[1].strInstructions,
-        //   data.drinks[2].strInstructions,
-        //   data.drinks[3].strInstructions,
-        //   data.drinks[4].strInstructions,
-        // ];
-
-        // //This loop will run through the ingredients needed for the drink.
-        // for (let i = 1; i < drinkList.length; i++) {
-        //   // console.log(i);
-
-        //   const ingredient = data.drinks[i].strDrink;
-
-        //   console.log(ingredient);
-        //   $("#drinkIngredient").append(" " + ingredient + "");
-        //   $("#drinkName").append("Drink: " + drinkList[i]);
-        // }
-
-        // for (let i = 1; i < drinkList.length; i++) {
-        //   //console.log(i);
-        //   thumbNail = data.drinks[i].strDrinkThumb;
-        //   $("#cocktailImage").attr("src", thumbNail);
-        //   console.log(thumbNail);
-        //   // console.log(ingredient1);
-        // }
-
-        // for (let i = 1; i < drinkList.length; i++) {
-        //   //console.log(i);
-        //   ingredient2 = data.drinks[2][`strIngredient${i}`];
-        //   console.log(ingredient2);
-        // }
-
-        // for (let i = 1; i < drinkList.length; i++) {
-        //   //console.log(i);
-        //   ingredient3 = data.drinks[3][`strIngredient${i}`];
-        //   console.log(ingredient3);
-        // }
-
-        // for (let i = 1; i < drinkList.length; i++) {
-        //   //console.log(i);
-        //   ingredient4 = data.drinks[4][`strIngredient${i}`];
-        //   console.log(ingredient4);
-        // }
-
-        // console.log(ingredient);
-        // cocktailDirections.append(drinkDirections[0]);
-        // $("#drinkName").append("Drink: " + drinkList[i]);
-        // $("#drinkName1").append("Drink: " + drinkList[1]);
-        // $("#drinkName2").append("Drink: " + drinkList[2]);
-        // $("#drinkName3").append("Drink: " + drinkList[3]);
-        // $("#drinkName4").append("Drink: " + drinkList[4]);
-        // $("#drinkInstructions").append(drinkDirections[0]);
-        // $("#drinkInstructions1").append(drinkDirections[1]);
-        // $("#drinkInstructions2").append(drinkDirections[2]);
-        // $('#cocktailImage').attr('src', drinkImg[0]);
-        // $('#cocktailImage2').attr('src', drinkImg[1]);
-        // $('#cocktailImage3').attr('src', drinkImg[2]);
-        // $('#cocktailImage4').attr('src', drinkImg[3]);
-        // $('#cocktailImage5').attr('src', drinkImg[4]);
-
-        // li1.textContent = drinkList[0]
-        // li2.textContent = drinkDirections[0];
-        // div.append(labelP);
-        // div.append(img);
-        // // div.append(aTag);
-        // div.append(ul);
-
-        // cocktailData.append(div);
-        // cocktailData.append(drinkList[0])
-        // cocktailData.append(drinkDirections[0])
-
-        // cocktailList2.append(drinkList[1]);
-
-        // this loop is only bring back null, not sure why yet.
-        // for (let i = 1; i < 16; i++) {
-        //   //console.log(i);
-        //   measure = data.drinks[0][`strMeasure${i}`];
-        //   console.log(measure);
-        // };
-
-        // const imgDrink = document.createElement("img");
-        // imgDrink.src = data.drinks[1].strDrinkThumb;
-        // let img_Drink = document.getElementById("cocktailImg");
-        // img_Drink.append(imgDrink);
-
-        // cocktailSearchForm.append(element)
       });
   });
 });
