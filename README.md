@@ -9,9 +9,8 @@ This is a project has two side server API's to solve the questions you have been
 * Preparing a profesional presenataion 
 
 ## Usage 
-[screenshot]
-[screenshot]
-[screenshot]
+![ApplicationVideoRecording](./assets/images/Untitled_%20Nov%2029%2C%202022%205_06%20PM.gif)
+
 
 ## Project Presentation 
 [Project Presentation](https://www.canva.com/design/DAFTKyQ99JU/qLMc7DEdUN7DMhSicCNj0Q/view?utm_content=DAFTKyQ99JU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
@@ -30,4 +29,5 @@ UIKIT
 4. Aliyah Gutierrez
 
 ## Documentation
-* URL of deployed application 
+* URL of deployed application - https://jcg0.github.io/project-1-recipesy/
+* URL of Github repository - https://github.com/jcg0/project-1-recipesy
